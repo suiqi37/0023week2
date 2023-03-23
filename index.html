@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Week 2</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Qi Sui" />
+    <script src="libs/header-attrs-2.19/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Week 2
+]
+.subtitle[
+## Sensor
+]
+.author[
+### Qi Sui
+]
+.date[
+### 2023/01/26 (updated: 2023-03-23)
+]
+
+---
+
+
+
+
+
+# The summary of the sensor
+
+## Landsat8-OLI (the Operational Land Imager) 
+
+Together with the Thermal Infrared Sensor (TIRS), they provide seasonal coverage of the global landmass at a spatial resolution of **30 meters (visible, NIR, SWIR); 100 meters (thermal); and 15 meters (panchromatic)**.OLI is a push-broom sensor with a four-mirror telescope and 12-bit quantization. 
+
+- Launch Date: February 11, 2013
+- Altitude: 705 km
+- Inclination: 98.2°
+- Orbit: polar, sun-synchronous
+- Equatorial Crossing Time: nominally 10 AM (± 15 min.) local time (descending node)
+- Period of Revolution: 99 minutes; ~14.5 orbits/day
+- Repeat Coverage: 16 days
+- Data: 12-bit scaled to 16-bit integers
+
+Source:[NASA Landsat8](https://landsat.gsfc.nasa.gov/satellites/landsat-8/)
+
+---
+# The summary of the sensor
+## Compares the OLI spectral bands to Landsat 7′s ETM+ bands
+OLI provides two new spectral bands, one tailored especially for detecting **cirrus clouds** and the other for **coastal zone** observations.
+&lt;img src="img/ETMvOLI-TIRS-web_Feb20131.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+Source:[NASA Landsat8](https://landsat.gsfc.nasa.gov/satellites/landsat-8/)
+
+---
+
+# Examples of studies
+## LULC
+.pull-left[
+A study in Blantyre City uses Landsat 7 Enhanced Thematic Mapper (ETM+) images from 1999 and 2010 and **Landsat 8 Operational Land Imager (OLI) images** from 2019 to **detect and quantify LULC changes** that occurred in the city throughout a twenty-year study period.
+Source:&lt;a name=cite-Gondwe2021&gt;&lt;/a&gt;[Gondwe, Lin, and Munthali (2021)](#bib-Gondwe2021)
+]
+.pull-right[
+&lt;img src="img/8011565.fig.002.jpg" width="70%" /&gt;
+]
+
+---
+# Examples of studies
+## LULC
+.pull-left[
+.panelset[
+.panel[.panel-name[LULC map for 1999]
+&lt;img src="img/1999.jpg" width="60%" /&gt;
+]
+.panel[.panel-name[LULC map for 2010]
+&lt;img src="img/2010.jpg" width="60%" /&gt;
+]
+.panel[.panel-name[LULC map for 2019]
+
+&lt;img src="img/2019.jpg" width="60%" /&gt;
+]
+]
+]
+.pull-right[
+The study revealed that built-up land and agricultural land increased in their respective areas by 28.54km2 (194.81%) and 35.80km2 (27.16%). The area of bare land, forest land, herbaceous land, and waterbody, respectively, decreased by 0.05%, 90.52%, 71.67%, and 6.90%. The LULC changes in the study area were attributed to urbanization, population growth, social-economic growth, and climate change.
+]
+---
+# Examples of studies
+## Monitoring chlorophyll-a concentration (Chl-a) in inland waters
+Source:&lt;a name=cite-Ha2017&gt;&lt;/a&gt;[Ha, Koike, Nhuan, Canh, Thao, and Parsons (2017)](#bib-Ha2017)
+
+Urban lakes in tropical countries are under severe pressure from eutrophication and algae blooms due to massive nutrient loads from rapid urbanization, as well as humid and hot weather conditions.Remote sensing is a cost-effective near real-time monitoring technique, particularly for water trophic states estimated by Chl-a, contributing clarification of the eutrophication process for further management and decision-making. 
+
+The best estimation was obtained by the ratio of two reflectances at 562 and 483 nm, corresponding to the ratio of the OLI band 3 versus band 2, termed the GrB2 algorithm. 
+---
+# Examples of studies
+## Monitoring chlorophyll-a concentration (Chl-a) in inland waters
+
+&lt;img src="img/2.1.jpg" width="60%" style="display: block; margin: auto;" /&gt;
+
+(Reflectance spectra and Chl-a (μg/L) at ten points in West Lake measured on 1st June 2016)
+
+The GrB2 values using the reflectances of water samples and the Landsat images were correlated with the Chl-a by an exponential function, and the estimated Chla were verified by the smallness of standard error.
+---
+# Examples of studies
+In addition, landsat8 is used in ecological environment monitoring, mining environment monitoring, biomass estimation, extraction of crop planting area in reclamation area, crop growth monitoring in reclamation area, monitoring of plant diseases and insect pests in reclamation area, vegetation coverage inversion, identification of straw burning area in farmland, wetland water body monitoring, The application of urban green quantity estimation, crop planting area, reservoir storage capacity estimation, urban heat island effect inversion, surface temperature inversion, etc. is relatively mature
+---
+# Reflection of application examples
+
+.pull-left[## LULC
+This article describes how to identify LULC through a data collection (Landsat8 OLI) -data processing (e. g. atmospheric correction) -data analysis (ANN) -verification accuracy process.]
+.pull-right[## Monitoring Chl-a
+This article describes how to calculate and monitor chlorophyll-a concentration in hypertrophic waters by special bands. But it should be noted that the availability of GrB 2 is limited to waters with low levels of inorganic suspended matter, its extension to waters with much higher levels requires further investigation.]
+
+Found that most of the studies needed to detect changes, so data for multiple sensor were selected based on the required year.
+---
+class: left, left
+
+### References
+
+.small[
+&lt;a name=bib-Gondwe2021&gt;&lt;/a&gt;[Gondwe, J. F., S. Lin, and R. M.
+Munthali](#cite-Gondwe2021) (2021). "Analysis of Land Use and Land
+Cover Changes in Urban Areas Using Remote Sensing: Case of Blantyre
+City". In: _Discrete Dynamics in Nature and Society_ 2021.
+
+&lt;a name=bib-Ha2017&gt;&lt;/a&gt;[Ha, N. T. T., K. Koike, M. T. Nhuan, et
+al.](#cite-Ha2017) (2017). "Landsat 8/OLI Two bands ratio algorithm for
+chlorophyll-a concentration mapping in hypertrophic waters: An
+application to west lake in Hanoi (Vietnam)". In: _IEEE Journal of
+Selected Topics in Applied Earth Observations and Remote Sensing_ 10
+(11), pp. 4919-4929.
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "4:3"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
